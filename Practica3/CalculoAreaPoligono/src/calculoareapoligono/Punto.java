@@ -1,10 +1,10 @@
-package calculocirculocentral;
+package calculoareapoligono;
 
 import java.util.Scanner;
 
-
 public class Punto {
-    public double x , y;
+    private double x;
+    private double y;
     /**
      * Instancia a 0 las variables x e y, las coordenadas de los puntos.
      */
@@ -32,9 +32,9 @@ public class Punto {
      * @param nuevoX nueva coordenada X del punto.
      * @param nuevoY nueva coordenada Y del punto.
      */
-    void setCoordenadas(double nuevoX, double nuevoY){
-        x = nuevoX;
-        y = nuevoY;        
+    public void setCoordenadas(double nuevoX, double nuevoY){
+        this.x = nuevoX;
+        this.y = nuevoY;        
     }
     /**
      * Establece las coordenadas del punto al valor leído a través de
@@ -70,7 +70,7 @@ public class Punto {
     public double calcularDistanciaEuclidea(Punto punto){
         double resultado;
         
-        resultado = Math.sqrt( Math.pow((x-punto.x),2) + Math.pow((y-punto.y),2) );
+        resultado = Math.sqrt( Math.pow( ( this.x-punto.getX() ),2) + Math.pow( ( this.y-punto.getY() ),2) );
         
         return resultado;
     }

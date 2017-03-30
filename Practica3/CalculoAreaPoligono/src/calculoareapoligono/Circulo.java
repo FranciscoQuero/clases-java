@@ -1,26 +1,25 @@
 
-package calculocirculocentral;
+package calculoareapoligono;
 
 import java.util.Scanner;
 
 /**
  * Clase Circulo compuesta de un objeto de la clase Punto llamado centro
- * y una variable tipo double llamada radio. Contiene los métodos necesarios para
- * realizar cálculos con sus componentes así como para inicializar, leer
+ * y una variable tipo double llamada radio. Contiene los mÃ©todos necesarios para
+ * realizar cÃ¡lculos con sus componentes asÃ­ como para inicializar, leer
  * y establecer los distintos componentes a los valores deseados.
  * 
- * @author Francisco Jesús Quero de la Rosa
+ * @author Francisco JesÃºs Quero de la Rosa
  */
 public class Circulo {
-    public Punto centro = new Punto();    
-    public double radio;
+    private Punto centro;   
+    private double radio;
     
     /**
      * Instancia el centro al punto origen (0, 0) y el radio a 0.
      */
     public Circulo() {
-        centro.x = 0;
-        centro.y = 0;
+        centro =  new Punto(); 
         radio = 0;
     }
      /**
@@ -38,37 +37,37 @@ public class Circulo {
     }
     /**
      * Establece el radio y las coordenadas del centro del Circulo a los valores
-     * que se introducen en el método.
-     * @param r Nuevo valor que tendrá el radio del círculo, tipo double.
+     * que se introducen en el mÃ©todo.
+     * @param r Nuevo valor que tendrÃ¡ el radio del cÃ­rculo, tipo double.
      * @param c Objeto de la clase Punto que establece el nuevo centro del
-     * círculo.
+     * cÃ­rculo.
      */
     public void set(double r, Punto c){
-        centro.setCoordenadas(c.x, c.y);
+        centro.setCoordenadas(c.getX(), c.getY());
         radio = r;
     }
     /**
      * Pide al usuario que introduzca en la linea de comandos el radio del circulo,
-     * así como las coordenadas del centro.
-     * @param conin objeto de la clase Scanner que utilizará para leer los
-     * parámetros.
+     * asÃ­ como las coordenadas del centro.
+     * @param conin objeto de la clase Scanner que utilizarÃ¡ para leer los
+     * parÃ¡metros.
      */
     public void leer(Scanner conin){
         radio = conin.nextDouble();
         centro.leer(conin);
     }
     /**
-     * Método que sirve para devolver el radio en formato double.
-     * @return devuelve el radio del círculo en tipo double.
+     * MÃ©todo que sirve para devolver el radio en formato double.
+     * @return devuelve el radio del cÃ­rculo en tipo double.
      */
     public double getRadio(){
         return radio;
     }
     
     /**
-     * Método que recopila los parámetros del punto centro y los establece en un
+     * MÃ©todo que recopila los parÃ¡metros del punto centro y los establece en un
      * nuevo punto, el cual es devuelto.
-     * @return devuelve un objeto de la clase Punto idéntico al centro
+     * @return devuelve un objeto de la clase Punto idÃ©ntico al centro
      */
     public Punto getCentro(){
         Punto nuevoPunto = new Punto();
@@ -77,8 +76,8 @@ public class Circulo {
         return nuevoPunto;
     }
     /**
-     * Calcula el área del objeto de la clase Circulo a partir de su radio
-     * @return devuelve un valor tipo double con el área calculada.
+     * Calcula el Ã¡rea del objeto de la clase Circulo a partir de su radio
+     * @return devuelve un valor tipo double con el Ã¡rea calculada.
      */
     public double getArea(){
         double calculo;

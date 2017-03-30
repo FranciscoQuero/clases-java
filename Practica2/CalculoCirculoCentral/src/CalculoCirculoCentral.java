@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CalculoCirculoCentral {
     
     public static void main(String[] args) {
-        Circulo circulo1 = new Circulo(); //¿Se están inicializando correctamente?
+        Circulo circulo1 = new Circulo();
         Circulo circulo2 = new Circulo();
         Circulo circuloFinal = new Circulo();
         
