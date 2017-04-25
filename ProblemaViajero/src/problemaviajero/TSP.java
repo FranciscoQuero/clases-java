@@ -16,28 +16,36 @@ public class TSP {
      */
     public static void main(String[] args) {
         
-        Ruta ruta;
+        Ruta ruta = null;
         String opcion;
         int inicio = 0;
+        
+        long time_start, time_end;
         
         Scanner conin = new Scanner(System.in);
         Problema problema = Problema.leerCiudades(conin);
         
-        HeuristicaVecinoMasCercano vecino = new HeuristicaVecinoMasCercano();
-        
-        ruta = vecino.obtenerMejorRuta(problema);
+        time_start = System.currentTimeMillis();
         
         if (args[0].equals("-algo")){
             
-            switch(Integer.parseInt(args[1])){ // si no ponemos el parametro -algo 
-                case 1:                        // se resolvera mediante la heuristica
-                    break;                     // del vecino mas cercano
+            switch(Integer.parseInt(args[1])){
+                case 1: 
+                     HeuristicaVecinoMasCercano vecino = new HeuristicaVecinoMasCercano();
+                     ruta = vecino.obtenerMejorRuta(problema);
+                    break;                     
                 case 2:
                     HeuristicaInsercionMasEconomica eco=new HeuristicaInsercionMasEconomica(problema);
                     ruta=eco.obtenerMejorRuta();
                     break;
+                case 3:
+                    HeuristicaInsercionMasLejana lej=new HeuristicaInsercionMasLejana(problema);
+                    ruta=lej.obtenerMejorRuta();
+                    break;    
                 case 4:
-                    ruta = HeuristicaIntercambioAristas.cambioAristas(ruta, problema);
+                     HeuristicaVecinoMasCercano vecin = new HeuristicaVecinoMasCercano();
+                     ruta = vecin.obtenerMejorRuta(problema);
+                     ruta = HeuristicaIntercambioAristas.cambioAristas(ruta, problema);
                     break;
                 case 5:
                     ruta = HeuristicaMonteCarlo.monteCarlo(problema);
@@ -45,6 +53,10 @@ public class TSP {
             }
             inicio = 2;
         }
+        
+        time_end = System.currentTimeMillis();
+        System.out.println("El tiempo de ejecución es " + ( time_end - time_start ) +" milisegundos");
+        
           for(int i = inicio; i < args.length; i++){
               opcion=args[i];
               

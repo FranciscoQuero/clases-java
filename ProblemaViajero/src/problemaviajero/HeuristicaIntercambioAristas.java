@@ -18,55 +18,31 @@ public class HeuristicaIntercambioAristas {
         int i, j, nCiudades = ruta.getnCiudades(), mini = 0, minj = 0;
         double minimoCambio, cambio=0;
         Ruta mejorRuta = ruta;
-        
-// esta parte es la propuesta en la practica aunque sale un peor resultado        
-//        do{
-//            minimoCambio = 0;
-//            
-//            for( i = 0; i< nCiudades-2; i++) {
-//                for(j = i+2; j< nCiudades; j++) {
-//                    cambio = problema.getCiudad(mejorRuta.getCiudades(i)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(j)))
-//                    + problema.getCiudad(mejorRuta.getCiudades(i+1)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(j+1)))
-//                    - problema.getCiudad(mejorRuta.getCiudades(i)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(i+1)))
-//                    - problema.getCiudad(mejorRuta.getCiudades(j)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(j+1)));
-//                    
-//                    if (minimoCambio>cambio) {
-//                        
-//                        minimoCambio = cambio;
-//                        mini = i;
-//                        minj = j;
-//                    }
-//                }
-//                if(minimoCambio < 0)
-//                mejorRuta = optIntercambio(mejorRuta, mini, minj);
-//            }
-//            
-//        } while (minimoCambio < 0);
-
-
-// esta parte es la mejorada por mi  
-              minimoCambio=0; 
-            for( i = 0; i< nCiudades-1 ; i++) {
-              
-                for(j = i+2; j< nCiudades ; j++) {
-                     cambio = problema.getCiudad(mejorRuta.getCiudades(i)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(j)))
-                    + problema.getCiudad(mejorRuta.getCiudades(i+1)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(j+1)))
-                    - problema.getCiudad(mejorRuta.getCiudades(i)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(i+1)))
-                    - problema.getCiudad(mejorRuta.getCiudades(j)).calcularDistanciaEuclidea(problema.getCiudad(mejorRuta.getCiudades(j+1)));
-
-                    if (minimoCambio>cambio) {
+          
+        do{
+            minimoCambio = -0.00000000001;
+            
+            for( i = 0; i< nCiudades-2; i++) {
+                for(j = i+2; j< nCiudades; j++) {
+                    
+                    cambio = problema.getDistancia(mejorRuta.getCiudades(i), mejorRuta.getCiudades(j))
+                             + problema.getDistancia(mejorRuta.getCiudades(i+1), mejorRuta.getCiudades(j+1))
+                             - problema.getDistancia(mejorRuta.getCiudades(i), mejorRuta.getCiudades(i+1))
+                             - problema.getDistancia(mejorRuta.getCiudades(j), mejorRuta.getCiudades(j+1));
+                    
+                    
+                    if (minimoCambio > cambio) {
                         
                         minimoCambio = cambio;
                         mini = i;
                         minj = j;
                     }
-                    
-                
                 }
-              if(minimoCambio < 0)
-                mejorRuta = optIntercambio(mejorRuta, mini, minj);
-                 
+                
             }
+            if(minimoCambio < -0.00000000001)
+                mejorRuta = optIntercambio(mejorRuta, mini, minj);
+        } while (minimoCambio < -0.00000000001);
            
         return mejorRuta;
     }
@@ -85,8 +61,8 @@ public class HeuristicaIntercambioAristas {
         for (int i = 1; i <= z; i++){
             
            aux = ruta.getCiudades(mini+i);
-           ruta.setCiudades(mini+i, ruta.getCiudades(minj-1-i));
-           ruta.setCiudades(minj-1-i, aux);
+           ruta.setCiudades(mini+i, ruta.getCiudades(minj +1-i));
+           ruta.setCiudades(minj+1-i, aux);
         }
             
         return ruta;

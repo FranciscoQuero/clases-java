@@ -68,8 +68,7 @@ public class Ruta {
     public void insertarCiudad(int pos,int valor){
         int aux;
         nCiudades++;
-        System.out.println(pos+" "+valor+"  "+nCiudades);
-        System.out.println("---------------------------------------");
+        
          aux=ciudades[pos];
          ciudades[pos]=valor;
          int aux1;
@@ -80,12 +79,12 @@ public class Ruta {
            
             
         }
-        System.out.println(toString());
     }   
     /**
-     * Convierta una ruta en formato String para que sea legible.
+     * Convierte una ruta en formato String para que sea legible.
      * @return ruta convertida a String.
      */
+    @Override
     public String toString(){
         String cadena="{";
         for(int i=0;i<nCiudades;i++){

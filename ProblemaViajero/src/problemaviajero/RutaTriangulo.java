@@ -29,7 +29,7 @@ public class RutaTriangulo {
         ciudadEste();
       
         ciudadOeste();
-       System.out.println(""+ruta.toString());
+      
     }
     
     /**

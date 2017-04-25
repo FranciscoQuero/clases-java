@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Francis
+ * @author Francisco J. Quero
  */
 public class TestComparable {
     public static void main(String[] args){
@@ -44,7 +44,7 @@ public class TestComparable {
         
         
         for (int i = 0; i < figuras.length; i++)
-            System.out.println(figuras[i] + "\n");
+            System.out.println(figuras_copia1[i] + "\n");
     }
     
     static Figura[] randomArrayFiguras( int nfiguras, double prob, int dimMax){

@@ -26,7 +26,7 @@ public class HeuristicaMonteCarlo {
         for(int i = 0; i < ciudadesTotales; i++)
             rutaEnteros.add(i);
         
-        for(int k = 0; k < 100000; k++){
+        for(int k = 0; k < 10000; k++){
             
             Collections.shuffle(rutaEnteros);
             ruta = new Ruta(problema.getNumeroCiudades());

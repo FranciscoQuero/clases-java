@@ -28,7 +28,7 @@ public class HeuristicaInsercionMasEconomica extends RutaTriangulo{
             for(int i=0;i<getCiudadesSV().size();i++){
                 for(int j=0;j<mejorRuta.getnCiudades();j++){
                     incremento=getProblema().getDistancia(getCiudadesSV().get(i), mejorRuta.getCiudades(j))+
-                            getProblema().getDistancia( mejorRuta.getCiudades(mejorRuta.getCiudades(mejorRuta.getnCiudades()-j-1)),getCiudadesSV().get(i))-
+                            getProblema().getDistancia(mejorRuta.getCiudades(mejorRuta.getnCiudades()-j-1),getCiudadesSV().get(i))-
                             getProblema().getDistancia(mejorRuta.getCiudades(mejorRuta.getnCiudades()-j-1), mejorRuta.getCiudades(j));
                     if (incremento < incrementoMin){
                         incrementoMin=incremento;
