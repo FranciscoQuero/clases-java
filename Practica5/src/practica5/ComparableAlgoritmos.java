@@ -7,11 +7,11 @@ package practica5;
 
 /**
  *
- * @author Francis
+ * @author Francisco J. Quero
  */
 public class ComparableAlgoritmos {
     
-    static Figura mayor(Figura[] figuras){
+    public static Figura mayor(Figura[] figuras){
         Figura mayor = figuras[0];
         for (int i = 1; i < figuras.length; i++){
             if (mayor.compareTo(figuras[i]) == 1)
@@ -21,12 +21,12 @@ public class ComparableAlgoritmos {
         return mayor;
     }
     
-    static void ordena(Figura[] array){
+    public static void ordena(Figura[] array){
         Figura aux;
         for(int i = 0; i < array.length - 1; i++) {
-            for(int j = 0; j < array.length - 1; j++){
+            for(int j = 0; j < array.length - i - 1; j++){
                 
-                if (array[j].compareTo(array[j + 1]) == -1) {
+                if (array[j+1].compareTo(array[j]) == -1) {
                     
                     aux = array[j+1];
                     array[j+1] = array[j];

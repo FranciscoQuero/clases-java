@@ -5,6 +5,7 @@
  */
 package practica5;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,20 +17,22 @@ public class TestComparable {
     public static void main(String[] args){
         
         
-        /*int nfiguras = Integer.parseInt(args[0]);
+        int nfiguras = Integer.parseInt(args[0]);
         double prob = Double.parseDouble(args[1]);
-        int dimMax = Integer.parseInt(args[2]);*/
+        int dimMax = Integer.parseInt(args[2]);
         
-        Scanner conin = new Scanner(System.in);
-        int nfiguras, dimMax;
+        // Descomentar las siguientes lineas para que los datos se pidan por
+        // la línea de comandos
+        /*int nfiguras, dimMax;
         double prob;
         
+        Scanner conin = new Scanner(System.in);
         System.out.print("Introduce el numero de figuras: ");
         nfiguras = conin.nextInt();
         System.out.print("Introduce la probabilidad de circulos: ");
         prob = conin.nextDouble();
         System.out.print("Introduce la dimension maxima: ");
-        dimMax = conin.nextInt();
+        dimMax = conin.nextInt();*/
         
         Figura[] figuras = randomArrayFiguras(nfiguras, prob, dimMax);
         
@@ -38,13 +41,18 @@ public class TestComparable {
         
         Figura[] figuras_copia1 = figuras.clone();
         
-        System.out.println("Ordenando...");
+        System.out.println("");
         ComparableAlgoritmos.ordena(figuras_copia1);
         
+        Arrays.sort(figuras);
         
-        
-        for (int i = 0; i < figuras.length; i++)
+        System.out.println("\nOrdenando manualmente: ");
+        for (int i = 0; i < figuras_copia1.length; i++)
             System.out.println(figuras_copia1[i] + "\n");
+        
+        System.out.println("\nOrdenando con sort de la clase Arrays: ");
+        for (int i = 0; i < figuras.length; i++)
+            System.out.println(figuras[i] + "\n");
     }
     
     static Figura[] randomArrayFiguras( int nfiguras, double prob, int dimMax){

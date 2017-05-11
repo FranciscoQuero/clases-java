@@ -55,8 +55,12 @@ public class Problema {
         
        
         //System.out.print("DIMENSION: ");
-        
-        totalCiudades = conin.nextInt();
+        String dimension = conin.next();
+        if ("DIMENSION:".equals(dimension)) {
+            totalCiudades = conin.nextInt(); // Si el fichero empieza por "DIMENSION:", se ignora
+        } else {
+            totalCiudades = Integer.parseInt(dimension);
+        }
         
         for(int i = 0; i< totalCiudades; i++){
             

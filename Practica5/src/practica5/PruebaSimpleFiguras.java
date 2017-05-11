@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Francis
+ * @author Francisco J. Quero
  */
 public class PruebaSimpleFiguras {
     public static void main(String[] args){

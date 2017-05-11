@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practica5;
+package practica6;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 
  * @author Francisco J. Quero
  */
-public abstract class Figura implements Comparable<Figura> {
+public abstract class Figura implements Comparable<Figura>, Serializable {
     public Date fechaCreacion;
     private double area;
     private double perimetro;

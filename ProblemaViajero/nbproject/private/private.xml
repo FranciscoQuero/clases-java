@@ -4,6 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Francis/Desktop/ProgramasJava/ComplementosProgramacion/clases-de-java/ProblemaViajero/src/problemaviajero/Ciudad.java</file>
+            <file>file:/C:/Users/Francis/Desktop/ProgramasJava/ComplementosProgramacion/clases-de-java/ProblemaViajero/src/problemaviajero/HeuristicaVecinoMasCercano.java</file>
+            <file>file:/C:/Users/Francis/Desktop/ProgramasJava/ComplementosProgramacion/clases-de-java/ProblemaViajero/src/problemaviajero/Problema.java</file>
+            <file>file:/C:/Users/Francis/Desktop/ProgramasJava/ComplementosProgramacion/clases-de-java/ProblemaViajero/src/problemaviajero/HeuristicaIntercambioAristas.java</file>
+            <file>file:/C:/Users/Francis/Desktop/ProgramasJava/ComplementosProgramacion/clases-de-java/ProblemaViajero/src/problemaviajero/TSP.java</file>
+            <file>file:/C:/Users/Francis/Desktop/ProgramasJava/ComplementosProgramacion/clases-de-java/ProblemaViajero/src/problemaviajero/RutaTriangulo.java</file>
+            <file>file:/C:/Users/Francis/Desktop/ProgramasJava/ComplementosProgramacion/clases-de-java/ProblemaViajero/src/problemaviajero/HeuristicaMonteCarlo.java</file>
         </group>
     </open-files>
 </project-private>
